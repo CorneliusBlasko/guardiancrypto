@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.content {
+  max-width: 800px;
+  margin: auto;
+}
+
+html {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-variant: small-caps;
+  font-size: 14px;
+}
+
+img {
+  width: 30px;
+  height: 30px;
+}
+
+.list-inline {
+  display: flex;
+}
+
+.list-inline li {
+  flex: 1;
+  font-size: 20px;
+  text-align: center;
+}
+
+@media (max-width: 800px) {
+  img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .list-inline {
+    display: flex;
+  }
+
+  .list-inline li {
+    flex: 1;
+    font-size: 14px;
+    text-align: center;
+  }
+}
