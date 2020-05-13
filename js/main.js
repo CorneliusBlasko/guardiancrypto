@@ -1,3 +1,5 @@
+//window.onload = call();
+
 function call() {
   var data;
   var xhr = new XMLHttpRequest();
@@ -8,34 +10,36 @@ function call() {
   };
   xhr.open('POST', 'http://localhost:8081/cryptonite/cryptoprices', true);
   xhr.send(
-    "{'service':'cryptopriceservice', 'start':'1','limit':'4','convert':'EUR'}"
+    "{'service':'cryptopriceservice', 'start':'1','limit':'10','convert':'EUR'}"
   );
 
   xhr.onload = function () {
     if (this.status == 200) {
       var output = '';
 
-      for (var i in data) {
+      for (var i = 0; i < data.data.length; i++) {
         output +=
+          '<li class="list-group-item">' +
           '<ul class="list-inline">' +
-          '<li><img src="images/' +
-          data[i].symbol +
+          '<li><img src="img/' +
+          data.data[i].symbol +
           '.png" /></li>' +
           '<li id="coin-name">' +
-          data[i].name +
+          data.data[i].name +
           '</li>' +
           '<li id="coin-symbol">' +
-          data[i].symbol +
+          data.data[i].symbol +
           '</li>' +
           '<li id="coin-price">' +
-          data[i].price +
+          data.data[i].price +
           '</li>' +
           '<li id="coin-percent-change">' +
-          data[i].percent_change +
+          data.data[i].percent_change +
           '</li>' +
-          '</ul>';
+          '</ul>' +
+          '</div>';
       }
-      console.log(data);
+      console.log(data.data[0]);
       document.getElementById('coins').innerHTML = output;
     }
   };
