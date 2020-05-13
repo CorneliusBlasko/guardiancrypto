@@ -32,6 +32,7 @@ function call() {
           '</li>' +
           '<li id="coin-price">' +
           data.data[i].price +
+          '€' +
           '</li>' +
           '<li id="coin-percent-change">' +
           data.data[i].percent_change +
