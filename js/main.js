@@ -14,9 +14,8 @@ function call() {
   );
 
   xhr.onload = function () {
-    if (this.status == 200) {
-      var output = '';
-
+    var output = '';
+    if (this.status == 200 && typeof data !== 'undefined') {
       for (var i = 0; i < data.data.length; i++) {
         output +=
           '<li class="list-group-item">' +
@@ -41,7 +40,15 @@ function call() {
           '</div>';
       }
       console.log(data.data[0]);
-      document.getElementById('coins').innerHTML = output;
+    } else {
+      output +=
+        '<p>Error retrieving cryptocurrencies data: ' +
+        this.responseText +
+        '</p>';
+      console.log(this.responseText);
     }
+    document.getElementById('coins').innerHTML = output;
   };
 }
+
+function call2() {}
