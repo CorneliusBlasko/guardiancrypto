@@ -1,4 +1,4 @@
-//window.onload = call();
+window.onload = call();
 
 function call() {
   var data;
@@ -8,10 +8,8 @@ function call() {
       data = JSON.parse(xhr.responseText);
     }
   };
-  xhr.open('POST', 'http://localhost:8081/cryptonite/cryptoprices', true);
-  xhr.send(
-    "{'service':'cryptopriceservice', 'start':'1','limit':'10','convert':'EUR'}"
-  );
+  xhr.open('POST', 'http://18.196.144.109/cryptoprices', true);
+  xhr.send("{'service':'cryptopriceservice','convert':'USD'}");
 
   xhr.onload = function () {
     var output = '';
@@ -39,7 +37,7 @@ function call() {
           '</ul>' +
           '</div>';
       }
-      console.log(data.data[0]);
+      console.log(data);
     } else {
       output +=
         '<p>Error retrieving cryptocurrencies data: ' +
