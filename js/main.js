@@ -8,7 +8,7 @@ function call() {
       data = JSON.parse(xhr.responseText);
     }
   };
-  xhr.open('POST', 'http://18.196.144.109/cryptoprices', true);
+  xhr.open('POST', 'http://35.159.2.171/cryptoprices', true);
   xhr.send("{'service':'cryptopriceservice','convert':'USD'}");
 
   xhr.onload = function () {
@@ -48,5 +48,3 @@ function call() {
     document.getElementById('coins').innerHTML = output;
   };
 }
-
-function call2() {}
