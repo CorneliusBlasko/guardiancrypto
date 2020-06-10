@@ -31,6 +31,10 @@ img {
 }
 
 @media (max-width: 800px) {
+  h1 {
+    font-size: 26px;
+  }
+
   img {
     width: 20px;
     height: 20px;
