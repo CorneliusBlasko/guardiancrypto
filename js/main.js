@@ -8,7 +8,7 @@ function call() {
       data = JSON.parse(xhr.responseText);
     }
   };
-  xhr.open('POST', 'http://3.120.32.168:8080/cryptonite/cryptoprices', true);
+  xhr.open('POST', 'http://3.125.104.207:8080/cryptonite/cryptoprices', true);
   xhr.send("{'service':'cryptopriceservice','convert':'USD'}");
 
   xhr.onload = function () {
